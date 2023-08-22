@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TodoList</title>
+</head>
+<body class="text-center">
+    <h1 >welcome to TodoList</h1>
+   <%  if(locals.data){%>
+
+    <div>
+        <h3><% data.forEach(element => {%>
+            <div><%= element %></div>
+        <%}); %></h3>
+    </div>
+    <% } else 
+    {%>
+        <h2>click add to add items</h2>
+
+    <%} %>
+    <form action="/submit" method="post">
+        <input type="text" placeholder="enter" name="value">
+        <input type="submit" value="add">
+        </form>
+</body>
+</html>
